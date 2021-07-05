@@ -19,6 +19,9 @@
     <Filter Include="Resource Files\Textures">
       <UniqueIdentifier>{4e8340d6-1a73-499c-a464-be760c5abae1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures\skybox">
+      <UniqueIdentifier>{3cd1ab35-97ef-455c-9f63-5c95cdd2e9e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\Camera.cpp">
@@ -71,22 +74,28 @@
     <None Include="$(SolutionDir)\Resources\shaders\light.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\outlining.vert">
+    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\outlining.frag">
+    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\grass.frag">
+    <None Include="$(SolutionDir)\Resources\shaders\grass.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\windows.frag">
+    <None Include="$(SolutionDir)\Resources\shaders\outlining.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\framebuffer.vert">
+    <None Include="$(SolutionDir)\Resources\shaders\outlining.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="Resources\shaders\framebuffer.frag">
+    <None Include="$(SolutionDir)\Resources\shaders\windows.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\skybox.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\skybox.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -122,6 +131,24 @@
     </Image>
     <Image Include="$(SolutionDir)\Resources\TestTextures\planksSpec.png">
       <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\back.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\bottom.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\front.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\left.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\right.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\top.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
     </Image>
   </ItemGroup>
 </Project>

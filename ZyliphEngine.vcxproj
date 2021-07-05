@@ -105,12 +105,14 @@
     <None Include="$(SolutionDir)\Resources\shaders\defualt.vert" />
     <None Include="$(SolutionDir)\Resources\shaders\light.frag" />
     <None Include="$(SolutionDir)\Resources\shaders\light.vert" />
-    <None Include="Resources\shaders\framebuffer.frag" />
-    <None Include="Resources\shaders\framebuffer.vert" />
-    <None Include="Resources\shaders\grass.frag" />
-    <None Include="Resources\shaders\outlining.frag" />
-    <None Include="Resources\shaders\outlining.vert" />
-    <None Include="Resources\shaders\windows.frag" />
+    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.frag" />
+    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.vert" />
+    <None Include="$(SolutionDir)\Resources\shaders\grass.frag" />
+    <None Include="$(SolutionDir)\Resources\shaders\outlining.frag" />
+    <None Include="$(SolutionDir)\Resources\shaders\outlining.vert" />
+    <None Include="$(SolutionDir)\Resources\shaders\windows.frag" />
+    <None Include="Resources\shaders\skybox.frag" />
+    <None Include="Resources\shaders\skybox.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Camera.h" />
@@ -125,6 +127,12 @@
     <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg" />
     <Image Include="$(SolutionDir)\Resources\TestTextures\planks.png" />
     <Image Include="$(SolutionDir)\Resources\TestTextures\planksSpec.png" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\back.jpg" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\bottom.jpg" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\front.jpg" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\left.jpg" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\right.jpg" />
+    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\top.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
