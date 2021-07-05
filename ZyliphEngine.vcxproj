@@ -56,7 +56,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -99,12 +98,19 @@
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\VBO.cpp" />
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZMesh.cpp" />
     <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h" />
+    <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.frag" />
-    <None Include="$(SolutionDir)\Resources\shaders\defualt.vert"/>
+    <None Include="$(SolutionDir)\Resources\shaders\defualt.vert" />
     <None Include="$(SolutionDir)\Resources\shaders\light.frag" />
     <None Include="$(SolutionDir)\Resources\shaders\light.vert" />
+    <None Include="Resources\shaders\framebuffer.frag" />
+    <None Include="Resources\shaders\framebuffer.vert" />
+    <None Include="Resources\shaders\grass.frag" />
+    <None Include="Resources\shaders\outlining.frag" />
+    <None Include="Resources\shaders\outlining.vert" />
+    <None Include="Resources\shaders\windows.frag" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Camera.h" />
@@ -113,6 +119,7 @@
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Texture.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VAO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h" />
+    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg" />

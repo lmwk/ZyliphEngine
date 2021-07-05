@@ -54,6 +54,9 @@
     <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.vert">
@@ -66,6 +69,24 @@
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="$(SolutionDir)\Resources\shaders\light.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\outlining.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\outlining.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\grass.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\windows.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\framebuffer.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\framebuffer.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -86,6 +107,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

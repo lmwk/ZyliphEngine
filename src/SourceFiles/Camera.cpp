@@ -32,19 +32,19 @@ void Camera::KeyInputs(GLFWwindow* window, double deltatime)
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
-        Position += speed * Orientation * static_cast<float>(deltatime);
+        Position += speed * Orientation * static_cast<float>(deltatime / 10);
     }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
     {
-        Position += speed * -glm::normalize(glm::cross(Orientation, Up)) * static_cast<float>(deltatime);
+        Position += speed * -glm::normalize(glm::cross(Orientation, Up)) * static_cast<float>(deltatime / 10);
     }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
     {
-        Position += speed * -Orientation * static_cast<float>(deltatime);
+        Position += speed * -Orientation * static_cast<float>(deltatime / 10);
     }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     {
-        Position += speed * glm::normalize(glm::cross(Orientation, Up)) * static_cast<float>(deltatime);
+        Position += speed * glm::normalize(glm::cross(Orientation, Up)) * static_cast<float>(deltatime / 10);
     }
 
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
@@ -57,11 +57,11 @@ void Camera::KeyInputs(GLFWwindow* window, double deltatime)
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
     {
-        speed = 0.4f;
+        speed = 10.0f;
     }
     else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_RELEASE)
     {
-        speed = 0.1f;
+        speed = 7.8f;
     }
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
     {
@@ -118,8 +118,8 @@ void Camera::GamePadInputs(GLFWwindow* window, double deltatime)
             float rotY = 0.0f;
             glfwGetCursorPos(window, &mouseX, &mouseY);
 
-            rotX = (static_cast<float>(mouseY) + sensitivity * axes[3] * static_cast<float>(deltatime) - (height / 2)) / 2;
-            rotY = (static_cast<float>(mouseX) + sensitivity * axes[2] * static_cast<float>(deltatime) - (width / 2)) / 2;
+            rotX = (static_cast<float>(mouseY) + sensitivity * axes[3] * static_cast<float>(deltatime / 10) - (height / 2)) / 2;
+            rotY = (static_cast<float>(mouseX) + sensitivity * axes[2] * static_cast<float>(deltatime / 10) - (width / 2)) / 2;
 
             const glm::vec3 newOrientation = glm::rotate(Orientation, glm::radians(-rotX), glm::normalize(glm::cross(Orientation, Up)));
 
@@ -135,30 +135,30 @@ void Camera::GamePadInputs(GLFWwindow* window, double deltatime)
 
         if (axes[1] >= 0.2f)
         {
-            Position += speed * -Orientation * axes[1] * static_cast<float>(deltatime);
+            Position += speed * -Orientation * axes[1] * static_cast<float>(deltatime / 10);
         }
         if (axes[1] <= -0.2f)
         {
-            Position += speed * -Orientation * axes[1] * static_cast<float>(deltatime);
+            Position += speed * -Orientation * axes[1] * static_cast<float>(deltatime / 10);
         }
         if (axes[0] >= 0.3f)
         {
-            Position += speed * glm::normalize(glm::cross(Orientation, Up)) * axes[0] * static_cast<float>(deltatime);
+            Position += speed * glm::normalize(glm::cross(Orientation, Up)) * axes[0] * static_cast<float>(deltatime / 10);
         }
         //Fixed, but a bit slow
         if (axes[0] <= -0.3f)
         {
-            Position += speed * glm::normalize(glm::cross(Orientation, Up)) * axes[0] * static_cast<float>(deltatime);
+            Position += speed * glm::normalize(glm::cross(Orientation, Up)) * axes[0] * static_cast<float>(deltatime / 10);
         }
 
         if (GLFW_PRESS == buttons[0])
         {
-            Position += speed * Up * static_cast<float>(deltatime);
+            Position += speed * Up * static_cast<float>(deltatime / 10);
         }
 
         if (GLFW_PRESS == buttons[1])
         {
-            Position += speed * -Up * static_cast<float>(deltatime);
+            Position += speed * -Up * static_cast<float>(deltatime / 10);
         }
 
     }
