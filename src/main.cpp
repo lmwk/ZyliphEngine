@@ -8,18 +8,6 @@ double nowTime;
 double prevTime;
 unsigned int counter = 0;
 
-const unsigned int numWins = 100;
-glm::vec3 positionsWin[numWins];
-float rotationsWin[numWins];
-
-unsigned int orderDraw[numWins];
-float distanceCamera[numWins];
-
-int compare(const void* a, const void* b)
-{
-    double diff = distanceCamera[*(int*)b] - distanceCamera[*(int*)a];
-    return (0 < diff) - (diff < 0);
-}
 
 float rectangleVertices[] =
 {
@@ -94,7 +82,8 @@ int main()
 
     //Gary draws things
 
-    Shader shaderProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/defualt.frag");
+    Shader shaderProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/defualt.frag", "./Resources/shaders/default.geom");
+    Shader normalProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/normals.frag", "./Resources/shaders/normals.geom");
     Shader frameProgram("./Resources/shaders/framebuffer.vert", "./Resources/shaders/framebuffer.frag");
     Shader skyShader("./Resources/shaders/skybox.vert", "./Resources/shaders/skybox.frag");
 
@@ -129,19 +118,6 @@ int main()
 
     //glfwSwapInterval(0);
 
-    for (unsigned int i = 0; i < numWins; i++)
-    {
-        positionsWin[i] = glm::vec3
-        (
-            -15.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (15.0f - (-15.0f)))),
-            1.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (4.0f - 1.0f))),
-            -15.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (15.0f - (-15.0f))))
-            
-        );
-
-        rotationsWin[i] = static_cast<float> (rand()) / (static_cast<float>(RAND_MAX / 1.0f));
-        orderDraw[i] = i;
-    }
 
     unsigned int rectVAO, rectVBO;
     glGenVertexArrays(1, &rectVAO);
@@ -240,7 +216,7 @@ int main()
         }
     }
 
-    ZModel model("./Resources/models/airplane/scene.gltf");
+    ZModel model("./Resources/models/statue/scene.gltf");
 
     //Making gary into an off-brand smurf
     //A loop if you couldn't tell, don't worry I got you
@@ -273,6 +249,7 @@ int main()
         glEnable(GL_DEPTH_TEST);
 
         model.Draw(shaderProgram, camera);
+        model.Draw(normalProgram, camera);
 
         glDepthFunc(GL_LEQUAL);
         skyShader.Activate();

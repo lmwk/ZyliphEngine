@@ -111,6 +111,9 @@
     <None Include="$(SolutionDir)\Resources\shaders\outlining.frag" />
     <None Include="$(SolutionDir)\Resources\shaders\outlining.vert" />
     <None Include="$(SolutionDir)\Resources\shaders\windows.frag" />
+    <None Include="Resources\shaders\default.geom" />
+    <None Include="Resources\shaders\normals.frag" />
+    <None Include="Resources\shaders\normals.geom" />
     <None Include="Resources\shaders\skybox.frag" />
     <None Include="Resources\shaders\skybox.vert" />
   </ItemGroup>

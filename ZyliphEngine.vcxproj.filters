@@ -98,6 +98,15 @@
     <None Include="Resources\shaders\skybox.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="Resources\shaders\default.geom">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\normals.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Resources\shaders\normals.geom">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Camera.h">
