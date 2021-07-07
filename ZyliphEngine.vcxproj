@@ -112,6 +112,7 @@
     <None Include="$(SolutionDir)\Resources\shaders\outlining.vert" />
     <None Include="$(SolutionDir)\Resources\shaders\windows.frag" />
     <None Include="Resources\shaders\default.geom" />
+    <None Include="Resources\shaders\instance.vert" />
     <None Include="Resources\shaders\normals.frag" />
     <None Include="Resources\shaders\normals.geom" />
     <None Include="Resources\shaders\skybox.frag" />
@@ -125,6 +126,7 @@
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VAO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h" />
+    <ClInclude Include="src\HeaderFiles\BaseWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg" />

@@ -1,4 +1,5 @@
 #include "HeaderFiles/ZModel.h"
+#include <cmath>
 
 const unsigned int width = 800;
 const unsigned int height = 800;
@@ -8,6 +9,10 @@ double nowTime;
 double prevTime;
 unsigned int counter = 0;
 
+float randf()
+{
+    return static_cast<float> (rand()) / (static_cast<float> (RAND_MAX));
+}
 
 float rectangleVertices[] =
 {
@@ -79,14 +84,11 @@ int main()
 
     //Setting the height and width of garry
     glViewport(0, 0, width, height);
-
     //Gary draws things
-
-    Shader shaderProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/defualt.frag", "./Resources/shaders/default.geom");
-    Shader normalProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/normals.frag", "./Resources/shaders/normals.geom");
+    Shader shaderProgram("./Resources/shaders/defualt.vert", "./Resources/shaders/defualt.frag");
     Shader frameProgram("./Resources/shaders/framebuffer.vert", "./Resources/shaders/framebuffer.frag");
     Shader skyShader("./Resources/shaders/skybox.vert", "./Resources/shaders/skybox.frag");
-
+    Shader instanceShader("./Resources/shaders/instance.vert", "./Resources/shaders/defualt.frag");
 
     glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 
@@ -101,6 +103,9 @@ int main()
     glUniform1i(glGetUniformLocation(frameProgram.ID, "screenTexture"), 0);
     skyShader.Activate();
     glUniform1i(glGetUniformLocation(skyShader.ID, "skybox"), 0);
+    instanceShader.Activate();
+    glUniform4f(glGetUniformLocation(instanceShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+    glUniform3f(glGetUniformLocation(instanceShader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 
     glEnable(GL_DEPTH_TEST);
 
@@ -216,7 +221,62 @@ int main()
         }
     }
 
-    ZModel model("./Resources/models/statue/scene.gltf");
+    const unsigned int number = 5000;
+    // Radius of circle around which asteroids orbit
+    float radius = 100.0f;
+    // How much ateroids deviate from the radius
+    float radiusDeviation = 25.0f;
+
+    // Holds all transformations for the asteroids
+    std::vector <glm::mat4> instanceMatrix;
+
+    for (unsigned int i = 0; i < number; i++)
+    {
+        // Generates x and y for the function x^2 + y^2 = radius^2 which is a circle
+        float x = randf();
+        float finalRadius = radius + randf() * radiusDeviation;
+        float y = ((rand() % 2) * 2 - 1) * sqrt(1.0f - x * x);
+
+        // Holds transformations before multiplying them
+        glm::vec3 tempTranslation;
+        glm::quat tempRotation;
+        glm::vec3 tempScale;
+
+        // Makes the random distribution more even
+        if (randf() > 0.5f)
+        {
+            // Generates a translation near a circle of radius "radius"
+            tempTranslation = glm::vec3(y * finalRadius, randf(), x * finalRadius);
+        }
+        else
+        {
+            // Generates a translation near a circle of radius "radius"
+            tempTranslation = glm::vec3(x * finalRadius, randf(), y * finalRadius);
+        }
+        // Generates random rotations
+        tempRotation = glm::quat(1.0f, randf(), randf(), randf());
+        // Generates random scales
+        tempScale = 0.1f * glm::vec3(randf(), randf(), randf());
+
+
+        // Initialize matrices
+        glm::mat4 trans = glm::mat4(1.0f);
+        glm::mat4 rot = glm::mat4(1.0f);
+        glm::mat4 sca = glm::mat4(1.0f);
+
+        // Transform the matrices to their correct form
+        trans = glm::translate(trans, tempTranslation);
+        rot = glm::mat4_cast(tempRotation);
+        sca = glm::scale(sca, tempScale);
+
+        // Push matrix transformation
+        instanceMatrix.push_back(trans * rot * sca);
+    }
+
+    ZModel model("./Resources/models/jupiter/scene.gltf", 1);
+    ZModel asteroids("./Resources/models/asteroid/scene.gltf", 500, instanceMatrix);
+
+    glfwSwapInterval(0);
 
     //Making gary into an off-brand smurf
     //A loop if you couldn't tell, don't worry I got you
@@ -229,7 +289,8 @@ int main()
         {
             std::string FPS = std::to_string((1.0 / deltatime) * counter);
             std::string ms = std::to_string((deltatime / counter) * 1000);
-            std::string newTitle = "Garry -" + FPS + "FPS /" + ms + ms;
+            std::string newTitle;
+            newTitle.append("Garry - FPS:" + FPS + " /" + ms);
             glfwSetWindowTitle(window, newTitle.c_str());
             prevTime = nowTime;
             counter = 0;
@@ -249,7 +310,8 @@ int main()
         glEnable(GL_DEPTH_TEST);
 
         model.Draw(shaderProgram, camera);
-        model.Draw(normalProgram, camera);
+        
+        asteroids.Draw(instanceShader, camera);
 
         glDepthFunc(GL_LEQUAL);
         skyShader.Activate();

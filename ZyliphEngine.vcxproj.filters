@@ -107,6 +107,9 @@
     <None Include="Resources\shaders\normals.geom">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="Resources\shaders\instance.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Camera.h">
@@ -128,6 +131,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\BaseWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

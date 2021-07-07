@@ -9,7 +9,7 @@ using json = nlohmann::json;
 class ZModel
 {
 public:
-    ZModel(const char* file);
+    ZModel(const char* file, unsigned int instances, std::vector<glm::mat4> instancemat4s = {});
 
     void Draw
     (
@@ -24,12 +24,14 @@ private:
     const char* file;
     std::vector<unsigned char> data;
     json JSON;
+    unsigned int instances;
 
     std::vector<ZMesh> meshes;
     std::vector<glm::vec3> translationMeshes;
     std::vector<glm::quat> rotationMeshes;
     std::vector<glm::vec3> scalesMeshes;
     std::vector<glm::mat4> matricesMeshes;
+    std::vector<glm::mat4> instancemat4s;
 
     std::vector<std::string> loadedTexNames;
     std::vector<Texture> loadedTextures;

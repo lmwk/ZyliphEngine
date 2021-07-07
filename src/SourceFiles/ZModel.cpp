@@ -1,12 +1,15 @@
 ﻿#include "../HeaderFiles/ZModel.h"
 
-ZModel::ZModel(const char* file)
+ZModel::ZModel(const char* file, unsigned instances, std::vector<glm::mat4> instancemat4s)
 {
     std::string text = get_file_contents(file);
     JSON = json::parse(text);
 
     ZModel::file = file;
     data = getData();
+
+    ZModel::instances = instances;
+    ZModel::instancemat4s = instancemat4s;
 
     TraverseNode(0);
 
@@ -39,7 +42,7 @@ void ZModel::loadMesh(unsigned indMesh)
     std::vector<GLuint> Indicies = getIndices(JSON["accessors"][indAccInd]);
     std::vector<Texture> textures = getTextures();
 
-    meshes.emplace_back(vertices, Indicies, textures);
+    meshes.emplace_back(vertices, Indicies, textures, instances, instancemat4s);
 }
 
 void ZModel::TraverseNode(unsigned int nextNode, glm::mat4 matrix)
