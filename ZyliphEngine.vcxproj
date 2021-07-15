@@ -130,6 +130,8 @@
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h" />
     <ClInclude Include="src\HeaderFiles\BaseRender.h" />
     <ClInclude Include="src\HeaderFiles\BaseWindow.h" />
+    <ClInclude Include="src\HeaderFiles\Components.h" />
+    <ClInclude Include="src\HeaderFiles\ECS.h" />
     <ClInclude Include="src\HeaderFiles\Light.h" />
     <ClInclude Include="src\HeaderFiles\ZGLFWindow.h" />
     <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h" />
