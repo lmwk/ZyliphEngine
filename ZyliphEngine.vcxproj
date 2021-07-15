@@ -99,6 +99,8 @@
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZMesh.cpp" />
     <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h" />
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp" />
+    <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp" />
+    <ClCompile Include="src\SourceFiles\ZUIContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.frag" />
@@ -126,7 +128,13 @@
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VAO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h" />
+    <ClInclude Include="src\HeaderFiles\BaseRender.h" />
     <ClInclude Include="src\HeaderFiles\BaseWindow.h" />
+    <ClInclude Include="src\HeaderFiles\Light.h" />
+    <ClInclude Include="src\HeaderFiles\ZGLFWindow.h" />
+    <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h" />
+    <ClInclude Include="src\HeaderFiles\ZScene.h" />
+    <ClInclude Include="src\HeaderFiles\ZUIContext.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg" />

@@ -120,7 +120,7 @@ int main()
     prevTime = glfwGetTime();
 
 
-
+    //vsync off
     //glfwSwapInterval(0);
 
 

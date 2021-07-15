@@ -60,6 +60,12 @@
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SourceFiles\ZUIContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.vert">
@@ -134,6 +140,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\HeaderFiles\BaseWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZGLFWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZUIContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\BaseRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
