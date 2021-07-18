@@ -5,6 +5,7 @@
 #include <memory>
 #include "ZUIContext.h"
 #include "ZOpenGLContext.h"
+#include "ZScene.h"
 
 class ZGLFWindow : public bWindow
 {

@@ -99,8 +99,17 @@
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZMesh.cpp" />
     <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h" />
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp" />
+    <ClCompile Include="src\SourceFiles\ZGLFWindow.cpp" />
     <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp" />
+    <ClCompile Include="src\SourceFiles\ZPostProcessingBuffer.cpp" />
     <ClCompile Include="src\SourceFiles\ZUIContext.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="Libraries\include\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.frag" />
@@ -135,6 +144,8 @@
     <ClInclude Include="src\HeaderFiles\Light.h" />
     <ClInclude Include="src\HeaderFiles\ZGLFWindow.h" />
     <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h" />
+    <ClInclude Include="src\HeaderFiles\ZPostProcessingBuffer.h" />
+    <ClInclude Include="src\HeaderFiles\ZPropertyPanel.h" />
     <ClInclude Include="src\HeaderFiles\ZScene.h" />
     <ClInclude Include="src\HeaderFiles\ZUIContext.h" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 #ifndef BASEWINDOW_CLASS_H
 #define BASEWINDOW_CLASS_H
 
+#include <glad/glad.h>
 #include <string>
 #include <GLFW/glfw3.h>
 
