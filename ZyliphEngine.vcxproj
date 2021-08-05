@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -19,13 +19,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -52,15 +52,19 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)\Libraries\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\Libraries\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
+    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>Z_PLAT_WIN;Z_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -78,6 +82,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,9 +104,13 @@
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZMesh.cpp" />
     <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h" />
     <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp" />
+    <ClCompile Include="src\SourceFiles\ZEntity.cpp" />
     <ClCompile Include="src\SourceFiles\ZGLFWindow.cpp" />
     <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp" />
     <ClCompile Include="src\SourceFiles\ZPostProcessingBuffer.cpp" />
+    <ClCompile Include="src\SourceFiles\ZPropertyPanel.cpp" />
+    <ClCompile Include="src\SourceFiles\ZScene.cpp" />
+    <ClCompile Include="src\SourceFiles\ZSceneHierarchyPanel.cpp" />
     <ClCompile Include="src\SourceFiles\ZUIContext.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui_demo.cpp" />
@@ -110,6 +119,8 @@
     <ClCompile Include="Libraries\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="Libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Testing\Test.cpp" />
+    <ClCompile Include="src\Utils\ZLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(SolutionDir)\Resources\shaders\defualt.frag" />
@@ -137,17 +148,22 @@
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VAO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h" />
     <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h" />
+    <ClInclude Include="src\Common.h" />
+    <ClInclude Include="src\Core\Core.h" />
     <ClInclude Include="src\HeaderFiles\BaseRender.h" />
     <ClInclude Include="src\HeaderFiles\BaseWindow.h" />
     <ClInclude Include="src\HeaderFiles\Components.h" />
-    <ClInclude Include="src\HeaderFiles\ECS.h" />
     <ClInclude Include="src\HeaderFiles\Light.h" />
+    <ClInclude Include="src\HeaderFiles\ZEntity.h" />
     <ClInclude Include="src\HeaderFiles\ZGLFWindow.h" />
     <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h" />
     <ClInclude Include="src\HeaderFiles\ZPostProcessingBuffer.h" />
     <ClInclude Include="src\HeaderFiles\ZPropertyPanel.h" />
     <ClInclude Include="src\HeaderFiles\ZScene.h" />
+    <ClInclude Include="src\HeaderFiles\ZSceneHierarchyPanel.h" />
     <ClInclude Include="src\HeaderFiles\ZUIContext.h" />
+    <ClInclude Include="Testing\Test.h" />
+    <ClInclude Include="src\Utils\ZLogger.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg" />

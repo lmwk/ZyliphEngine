@@ -6,6 +6,7 @@
 #include "ZUIContext.h"
 #include "ZOpenGLContext.h"
 #include "ZScene.h"
+#include "ZPropertyPanel.h"
 
 class ZGLFWindow : public bWindow
 {
@@ -42,6 +43,8 @@ private:
     std::unique_ptr<ZOpenGLContext> ZRenderCtx;
 
     std::unique_ptr<ZScene> ZScene;
+
+    std::unique_ptr<ZPropertyPanel> zPropertyPanel;
 
     bool IsRunning;
 };

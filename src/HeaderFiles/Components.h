@@ -1,2 +1,9 @@
 #pragma once
-#include "ECS.h"
+
+struct IdentifierComponent
+{
+    std::string name;
+
+    IdentifierComponent() = default;
+    IdentifierComponent(const IdentifierComponent&) = default;
+};

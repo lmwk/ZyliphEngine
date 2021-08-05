@@ -8,15 +8,15 @@ class FrameBuffer
 public:
     FrameBuffer() : zFBO{ 0 } {}
 
-    virtual void CreateBuffers(int width, int height);
+    virtual void CreateBuffers(int width, int height) = 0;
 
-    virtual void DeleteBuffers();
+    virtual void DeleteBuffers() = 0;
 
-    virtual void Bind();
+    virtual void Bind() = 0;
 
-    virtual void UnBind();
+    virtual void UnBind() = 0;
 
-    virtual unsigned int GetTexture();
+    virtual unsigned int GetTexture() = 0;
 
 protected:
     unsigned int zFBO = 0;

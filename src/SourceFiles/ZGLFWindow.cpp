@@ -1,5 +1,6 @@
 #include "../HeaderFiles/ZGLFWindow.h"
 
+
 bool ZGLFWindow::init(int width, int height, const std::string& title)
 {
     Width = width;
