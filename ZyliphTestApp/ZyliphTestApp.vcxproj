@@ -85,10 +85,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ZyliphTestApp.cpp" />
+    <ClCompile Include="src/ZyliphTestApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZyliphEngine.vcxproj">
+    <ProjectReference Include="..\ZyliphEngine\ZyliphEngine.vcxproj">
       <Project>{5e2d14f4-824f-4f7e-8e6e-c45445e63bad}</Project>
     </ProjectReference>
   </ItemGroup>

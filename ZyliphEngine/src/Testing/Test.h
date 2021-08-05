@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../src/Core/Core.h"
+#include "../Core/Core.h"
 
 namespace Zyliph
 {

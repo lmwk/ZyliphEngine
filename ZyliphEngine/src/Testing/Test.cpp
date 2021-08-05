@@ -1,5 +1,5 @@
 #include "Test.h"
-#include "../src/Utils/ZLogger.h"
+#include "../Utils/ZLogger.h"
 #include <iostream>
 
 namespace Zyliph
