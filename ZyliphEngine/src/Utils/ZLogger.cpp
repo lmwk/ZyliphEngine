@@ -8,7 +8,7 @@ namespace Zyliph
 
     void ZLogger::Init()
     {
-        spdlog::set_pattern("[%m/%d] [%T] [%n]: [%l] %v");
+        spdlog::set_pattern("[%m/%d] [%T] [%n]: %^[%l]%$ %v");
         z_CoreLogger = spdlog::stdout_color_mt("Engine");
         z_CoreLogger->set_level(spdlog::level::trace);
         z_ClientLogger = spdlog::stdout_color_mt("Client");

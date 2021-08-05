@@ -24,42 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\EBO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\shaderClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\stb.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\VAO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\VBO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZMesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\HeaderFiles\ZMesh.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\src\SourceFiles\ZModel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SourceFiles\ZUIContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -111,38 +75,44 @@
     <ClCompile Include="src\Utils\ZLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\EBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\shaderClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\stb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\HeaderFiles\ZMesh.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(SolutionDir)\Resources\shaders\defualt.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\defualt.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\light.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\light.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\framebuffer.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\grass.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\outlining.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\outlining.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(SolutionDir)\Resources\shaders\windows.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
     <None Include="Resources\shaders\skybox.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
@@ -161,29 +131,38 @@
     <None Include="Resources\shaders\instance.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="$(ProjectDir)\Resources\shaders\defualt.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\defualt.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\framebuffer.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\framebuffer.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\grass.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\light.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\light.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\outlining.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\windows.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="$(ProjectDir)\Resources\shaders\outlining.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\EBO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\shaderClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\VBO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(SolutionDir)\src\HeaderFiles\ZModel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\HeaderFiles\BaseWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -232,33 +211,54 @@
     <ClInclude Include="src\Utils\ZLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\EBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\shaderClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\ZModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\planks.png">
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\bottom.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\back.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(ProjectDir)\Resources\TestTextures\ayanobaseihm512x512.jpg">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\ayanobaseihm512x512.jpg">
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\front.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\left.jpg">
+      <Filter>Resource Files\Textures\skybox</Filter>
+    </Image>
+    <Image Include="$(ProjectDir)\Resources\TestTextures\planks.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\planksSpec.png">
+    <Image Include="$(ProjectDir)\Resources\TestTextures\planksSpec.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\back.jpg">
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\right.jpg">
       <Filter>Resource Files\Textures\skybox</Filter>
     </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\bottom.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
-    </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\front.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
-    </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\left.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
-    </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\right.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
-    </Image>
-    <Image Include="$(SolutionDir)\Resources\TestTextures\skybox\top.jpg">
+    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\top.jpg">
       <Filter>Resource Files\Textures\skybox</Filter>
     </Image>
   </ItemGroup>

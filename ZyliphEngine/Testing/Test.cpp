@@ -1,5 +1,5 @@
 #include "Test.h"
-#include "../src/Common.h"
+#include "../src/Utils/ZLogger.h"
 #include <iostream>
 
 namespace Zyliph
@@ -17,8 +17,8 @@ namespace Zyliph
     void TestApp::Run()
     {
         Zyliph::ZLogger::Init();
-        Zyliph::ZLogger::GetCoreLogger()->warn("test");
-        std::cout << "Testing" << std::endl;
+        Z_CORE_CRITICAL("hi");
+        Z_CLIENT_TRACE("hi");
     }
 
 
