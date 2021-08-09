@@ -1,265 +1,229 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{0259E1F6-6EC3-956D-B701-471323AB73C2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Libraries\include">
+      <UniqueIdentifier>{7562B06E-E178-AE04-2AF0-392696457F8C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Libraries\include\imgui">
+      <UniqueIdentifier>{9FB39B21-0BEB-E3B8-14F5-47DC80AB0AB2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Shaders">
-      <UniqueIdentifier>{c639efcc-9093-46a9-a6a6-bf5df7824578}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Textures">
-      <UniqueIdentifier>{4e8340d6-1a73-499c-a464-be760c5abae1}</UniqueIdentifier>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Textures\skybox">
-      <UniqueIdentifier>{3cd1ab35-97ef-455c-9f63-5c95cdd2e9e2}</UniqueIdentifier>
+    <Filter Include="src\HeaderFiles">
+      <UniqueIdentifier>{D86034F8-44EC-A1BC-4DFD-24B1B907FEBC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resources">
+      <UniqueIdentifier>{D76C8757-432D-038E-0C68-4C0B78E7476A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resources\TestTextures">
+      <UniqueIdentifier>{4AB0DED3-36C0-8AA4-9F79-EFC28BA8793D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resources\TestTextures\skybox">
+      <UniqueIdentifier>{39E886D1-A556-DC50-EE3F-97505AEDD1EC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resources\shaders">
+      <UniqueIdentifier>{D010E230-3C7D-9D2B-0571-3589719CBF93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SourceFiles">
+      <UniqueIdentifier>{A0C4A428-0C50-12ED-1561-95E1816B6EED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Testing">
+      <UniqueIdentifier>{7AFF1043-E6B4-8938-6FA9-830FDB5D803C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Utils">
+      <UniqueIdentifier>{4D9AFFB3-B904-B42A-0243-65D06EEC917F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SourceFiles\ZUIContext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZPostProcessingBuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZGLFWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZPropertyPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZSceneHierarchyPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SourceFiles\ZEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Testing\Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils\ZLogger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\EBO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\shaderClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\stb.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VAO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VBO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZMesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\HeaderFiles\ZMesh.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZModel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_demo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_draw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_impl_glfw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_impl_opengl3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_tables.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_widgets.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shaders\skybox.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="Resources\shaders\skybox.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="Resources\shaders\default.geom">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="Resources\shaders\normals.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="Resources\shaders\normals.geom">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="Resources\shaders\instance.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\defualt.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\defualt.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\framebuffer.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\framebuffer.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\grass.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\light.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\light.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\outlining.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\windows.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="$(ProjectDir)\Resources\shaders\outlining.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\HeaderFiles\BaseWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZGLFWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZUIContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\BaseRender.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\Light.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZPostProcessingBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZPropertyPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZSceneHierarchyPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\ZEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HeaderFiles\Components.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing\Test.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Common.h">
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\Core.h">
-      <Filter>Header Files</Filter>
+      <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Common.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\HeaderFiles\Camera.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\Components.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\EBO.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\Texture.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\VAO.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\VBO.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZEntity.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZMesh.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\ZModel.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeaderFiles\shaderClass.h">
+      <Filter>src\HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Testing\Test.h">
+      <Filter>src\Testing</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\ZLogger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\EBO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\shaderClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VBO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\ZModel.h">
-      <Filter>Header Files</Filter>
+      <Filter>src\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\bottom.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <ClCompile Include="..\Libraries\include\imgui\imgui.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_draw.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_widgets.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\Camera.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\EBO.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\Texture.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\VAO.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\VBO.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\ZEntity.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\ZMesh.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\ZModel.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\glad.c">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\shaderClass.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SourceFiles\stb.cpp">
+      <Filter>src\SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Testing\Test.cpp">
+      <Filter>src\Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\ZLogger.cpp">
+      <Filter>src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Resources\shaders\default.geom">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\defualt.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\defualt.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\framebuffer.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\framebuffer.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\grass.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\instance.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\light.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\light.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\normals.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\normals.geom">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\outlining.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\outlining.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\skybox.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\skybox.vert">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+    <None Include="src\Resources\shaders\windows.frag">
+      <Filter>src\Resources\shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Resources\TestTextures\ayanobaseihm512x512.jpg">
+      <Filter>src\Resources\TestTextures</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\back.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <Image Include="src\Resources\TestTextures\planks.png">
+      <Filter>src\Resources\TestTextures</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\ayanobaseihm512x512.jpg">
-      <Filter>Resource Files\Textures</Filter>
+    <Image Include="src\Resources\TestTextures\planksSpec.png">
+      <Filter>src\Resources\TestTextures</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\front.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\back.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\left.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\bottom.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\planks.png">
-      <Filter>Resource Files\Textures</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\front.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\planksSpec.png">
-      <Filter>Resource Files\Textures</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\left.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\right.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\right.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
-    <Image Include="$(ProjectDir)\Resources\TestTextures\skybox\top.jpg">
-      <Filter>Resource Files\Textures\skybox</Filter>
+    <Image Include="src\Resources\TestTextures\skybox\top.jpg">
+      <Filter>src\Resources\TestTextures\skybox</Filter>
     </Image>
   </ItemGroup>
 </Project>

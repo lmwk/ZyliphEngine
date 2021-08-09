@@ -9,11 +9,15 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{9B6BED5D-87CE-7C02-3054-B5B81C964885}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5e2d14f4-824f-4f7e-8e6e-c45445e63bad}</ProjectGuid>
     <RootNamespace>ZyliphEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -21,26 +25,23 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="Shared">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -48,133 +49,171 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\Libraries\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\ZyliphEngine\</OutDir>
+    <IntDir>..\bin\int\Debug-windows-x86_64\ZyliphEngine\</IntDir>
+    <TargetName>ZyliphEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
-    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
+    <OutDir>..\bin\Release-windows-x86_64\ZyliphEngine\</OutDir>
+    <IntDir>..\bin\int\Release-windows-x86_64\ZyliphEngine\</IntDir>
+    <TargetName>ZyliphEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86_64\ZyliphEngine\</OutDir>
+    <IntDir>..\bin\int\Dist-windows-x86_64\ZyliphEngine\</IntDir>
+    <TargetName>ZyliphEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>Z_PLAT_WIN;Z_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>Z_PLAT_WIN;Z_BUILD_DLL;Z_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Debug-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Debug-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Z_PLAT_WIN;Z_BUILD_DLL;Z_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Release-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Release-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>Z_PLAT_WIN;Z_BUILD_DLL;Z_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Dist-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Dist-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Camera.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\EBO.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\glad.c" />
-    <ClCompile Include="$(ProjectDir)\src\main.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\shaderClass.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\stb.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\Texture.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VAO.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\VBO.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZMesh.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\HeaderFiles\ZMesh.h" />
-    <ClCompile Include="$(ProjectDir)\src\SourceFiles\ZModel.cpp" />
-    <ClCompile Include="src\SourceFiles\ZEntity.cpp" />
-    <ClCompile Include="src\SourceFiles\ZGLFWindow.cpp" />
-    <ClCompile Include="src\SourceFiles\ZOpenGLContext.cpp" />
-    <ClCompile Include="src\SourceFiles\ZPostProcessingBuffer.cpp" />
-    <ClCompile Include="src\SourceFiles\ZPropertyPanel.cpp" />
-    <ClCompile Include="src\SourceFiles\ZScene.cpp" />
-    <ClCompile Include="src\SourceFiles\ZSceneHierarchyPanel.cpp" />
-    <ClCompile Include="src\SourceFiles\ZUIContext.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_demo.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_draw.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_tables.cpp" />
-    <ClCompile Include="$(SolutionDir)\Libraries\include\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="$(ProjectDir)\src\Testing\Test.cpp" />
-    <ClCompile Include="src\Utils\ZLogger.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(ProjectDir)\src\Resources\shaders\defualt.frag" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\defualt.vert" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\light.frag" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\light.vert" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\framebuffer.frag" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\framebuffer.vert" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\grass.frag" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\outlining.frag" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\outlining.vert" />
-    <None Include="$(ProjectDir)\src\Resources\shaders\windows.frag" />
-    <None Include="src\Resources\shaders\default.geom" />
-    <None Include="src\Resources\shaders\instance.vert" />
-    <None Include="src\Resources\shaders\normals.frag" />
-    <None Include="src\Resources\shaders\normals.geom" />
-    <None Include="src\Resources\shaders\skybox.frag" />
-    <None Include="src\Resources\shaders\skybox.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Camera.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\EBO.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\shaderClass.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\Texture.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VAO.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\VBO.h" />
-    <ClInclude Include="$(ProjectDir)\src\HeaderFiles\ZModel.h" />
     <ClInclude Include="src\Common.h" />
     <ClInclude Include="src\Core\Core.h" />
-    <ClInclude Include="src\HeaderFiles\BaseRender.h" />
-    <ClInclude Include="src\HeaderFiles\BaseWindow.h" />
+    <ClInclude Include="src\HeaderFiles\Camera.h" />
     <ClInclude Include="src\HeaderFiles\Components.h" />
-    <ClInclude Include="src\HeaderFiles\Light.h" />
+    <ClInclude Include="src\HeaderFiles\EBO.h" />
+    <ClInclude Include="src\HeaderFiles\Texture.h" />
+    <ClInclude Include="src\HeaderFiles\VAO.h" />
+    <ClInclude Include="src\HeaderFiles\VBO.h" />
     <ClInclude Include="src\HeaderFiles\ZEntity.h" />
-    <ClInclude Include="src\HeaderFiles\ZGLFWindow.h" />
-    <ClInclude Include="src\HeaderFiles\ZOpenGLContext.h" />
-    <ClInclude Include="src\HeaderFiles\ZPostProcessingBuffer.h" />
-    <ClInclude Include="src\HeaderFiles\ZPropertyPanel.h" />
-    <ClInclude Include="src\HeaderFiles\ZScene.h" />
-    <ClInclude Include="src\HeaderFiles\ZSceneHierarchyPanel.h" />
-    <ClInclude Include="src\HeaderFiles\ZUIContext.h" />
-    <ClInclude Include="$(ProjectDir)\src\Testing\Test.h" />
+    <ClInclude Include="src\HeaderFiles\ZMesh.h" />
+    <ClInclude Include="src\HeaderFiles\ZModel.h" />
+    <ClInclude Include="src\HeaderFiles\shaderClass.h" />
+    <ClInclude Include="src\Testing\Test.h" />
     <ClInclude Include="src\Utils\ZLogger.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\ayanobaseihm512x512.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\planks.png" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\planksSpec.png" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\back.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\bottom.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\front.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\left.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\right.jpg" />
-    <Image Include="$(ProjectDir)\src\Resources\TestTextures\skybox\top.jpg" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\SourceFiles\Camera.cpp" />
+    <ClCompile Include="src\SourceFiles\EBO.cpp" />
+    <ClCompile Include="src\SourceFiles\Texture.cpp" />
+    <ClCompile Include="src\SourceFiles\VAO.cpp" />
+    <ClCompile Include="src\SourceFiles\VBO.cpp" />
+    <ClCompile Include="src\SourceFiles\ZEntity.cpp" />
+    <ClCompile Include="src\SourceFiles\ZMesh.cpp" />
+    <ClCompile Include="src\SourceFiles\ZModel.cpp" />
+    <ClCompile Include="src\SourceFiles\glad.c" />
+    <ClCompile Include="src\SourceFiles\shaderClass.cpp" />
+    <ClCompile Include="src\SourceFiles\stb.cpp" />
+    <ClCompile Include="src\Testing\Test.cpp" />
+    <ClCompile Include="src\Utils\ZLogger.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Resources\shaders\default.geom" />
+    <None Include="src\Resources\shaders\defualt.frag" />
+    <None Include="src\Resources\shaders\defualt.vert" />
+    <None Include="src\Resources\shaders\framebuffer.frag" />
+    <None Include="src\Resources\shaders\framebuffer.vert" />
+    <None Include="src\Resources\shaders\grass.frag" />
+    <None Include="src\Resources\shaders\instance.vert" />
+    <None Include="src\Resources\shaders\light.frag" />
+    <None Include="src\Resources\shaders\light.vert" />
+    <None Include="src\Resources\shaders\normals.frag" />
+    <None Include="src\Resources\shaders\normals.geom" />
+    <None Include="src\Resources\shaders\outlining.frag" />
+    <None Include="src\Resources\shaders\outlining.vert" />
+    <None Include="src\Resources\shaders\skybox.frag" />
+    <None Include="src\Resources\shaders\skybox.vert" />
+    <None Include="src\Resources\shaders\windows.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Resources\TestTextures\ayanobaseihm512x512.jpg" />
+    <Image Include="src\Resources\TestTextures\planks.png" />
+    <Image Include="src\Resources\TestTextures\planksSpec.png" />
+    <Image Include="src\Resources\TestTextures\skybox\back.jpg" />
+    <Image Include="src\Resources\TestTextures\skybox\bottom.jpg" />
+    <Image Include="src\Resources\TestTextures\skybox\front.jpg" />
+    <Image Include="src\Resources\TestTextures\skybox\left.jpg" />
+    <Image Include="src\Resources\TestTextures\skybox\right.jpg" />
+    <Image Include="src\Resources\TestTextures\skybox\top.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

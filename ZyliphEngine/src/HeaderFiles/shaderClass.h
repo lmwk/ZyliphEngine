@@ -16,6 +16,8 @@ public:
     GLuint ID;
     Shader(const char* vertexfile, const char* fragmentfile, const char* geomfile);
     Shader(const char* vertexfile, const char* fragmentfile);
+    Shader() = default;
+    Shader(const Shader&) = default;
 
     void Activate();
     void Delete();

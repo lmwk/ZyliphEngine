@@ -33,6 +33,8 @@ public:
 
 
     Camera(int width, int height, glm::vec3 position);
+    Camera() = default;
+    Camera(const Camera&) = default;
 
     void UpdateMatrix(float FOVdeg, float nearPlane, float farPlane);
     void Matrix(Shader& shader, const char* uniform);

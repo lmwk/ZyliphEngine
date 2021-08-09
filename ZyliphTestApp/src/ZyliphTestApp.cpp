@@ -1,4 +1,4 @@
-#include "../../ZyliphEngine/src/Common.h"
+#include "Common.h"
 
 class App : public Zyliph::TestApp
 {

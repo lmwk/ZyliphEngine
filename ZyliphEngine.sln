@@ -1,31 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZyliphEngine", "ZyliphEngine\ZyliphEngine.vcxproj", "{5E2D14F4-824F-4F7E-8E6E-C45445E63BAD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZyliphEngine", "ZyliphEngine\ZyliphEngine.vcxproj", "{9B6BED5D-87CE-7C02-3054-B5B81C964885}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZyliphTestApp", "ZyliphTestApp\ZyliphTestApp.vcxproj", "{46418372-081F-4F72-B78B-9812782DD9C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZyliphTestApp", "ZyliphTestApp\ZyliphTestApp.vcxproj", "{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E2D14F4-824F-4F7E-8E6E-C45445E63BAD}.Debug|x64.ActiveCfg = Debug|x64
-		{5E2D14F4-824F-4F7E-8E6E-C45445E63BAD}.Debug|x64.Build.0 = Debug|x64
-		{5E2D14F4-824F-4F7E-8E6E-C45445E63BAD}.Release|x64.ActiveCfg = Release|x64
-		{5E2D14F4-824F-4F7E-8E6E-C45445E63BAD}.Release|x64.Build.0 = Release|x64
-		{46418372-081F-4F72-B78B-9812782DD9C3}.Debug|x64.ActiveCfg = Debug|x64
-		{46418372-081F-4F72-B78B-9812782DD9C3}.Debug|x64.Build.0 = Debug|x64
-		{46418372-081F-4F72-B78B-9812782DD9C3}.Release|x64.ActiveCfg = Release|x64
-		{46418372-081F-4F72-B78B-9812782DD9C3}.Release|x64.Build.0 = Release|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Debug|x64.ActiveCfg = Debug|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Debug|x64.Build.0 = Debug|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Dist|x64.ActiveCfg = Dist|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Dist|x64.Build.0 = Dist|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Release|x64.ActiveCfg = Release|x64
+		{9B6BED5D-87CE-7C02-3054-B5B81C964885}.Release|x64.Build.0 = Release|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Debug|x64.ActiveCfg = Debug|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Debug|x64.Build.0 = Debug|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Dist|x64.ActiveCfg = Dist|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Dist|x64.Build.0 = Dist|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Release|x64.ActiveCfg = Release|x64
+		{4671248A-B231-A0C0-7B6C-E93DE7EBE49C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0E9D242F-9B47-4E3C-BB19-E857E83EE985}
 	EndGlobalSection
 EndGlobal

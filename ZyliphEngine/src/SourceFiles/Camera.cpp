@@ -82,7 +82,7 @@ void Camera::KeyInputs(GLFWwindow* window, double deltatime)
 
         glm::vec3 newOrientation = glm::rotate(Orientation, glm::radians(-rotX), glm::normalize(glm::cross(Orientation, Up)));
 
-        if (!((glm::angle(newOrientation, Up) <= glm::radians(5.0f))) or (glm::angle(newOrientation, -Up) <= glm::radians(5.0f)))
+        if (!((glm::angle(newOrientation, Up) <= glm::radians(5.0f))) || (glm::angle(newOrientation, -Up) <= glm::radians(5.0f)))
         {
             Orientation = newOrientation;
         }
@@ -108,7 +108,7 @@ void Camera::GamePadInputs(GLFWwindow* window, double deltatime)
         const float* axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &axesCount);
         const unsigned char *buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &buttonCount);
         glfwSetCursorPos(window, (width / 2), (height / 2));
-        if (axes[3] <= -0.3f or axes[3] >= 0.3f or axes[2] <= -0.3f or axes[2] >= 0.3f)
+        if (axes[3] <= -0.3f || axes[3] >= 0.3f || axes[2] <= -0.3f || axes[2] >= 0.3f)
         {
 
             double mouseX;
