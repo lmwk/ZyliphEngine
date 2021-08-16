@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Core/Core.h"
+#include "../Windowing/Window.h"
 
 namespace Zyliph
 {
@@ -12,7 +13,12 @@ namespace Zyliph
         virtual ~TestApp();
 
         void Run();
+
+        void OnEvent(Event& e);
+    private:
+        Scope<Window> z_Window;
+        bool z_Running = true;
     };
 
-    _declspec(dllexport) void Print();
+    TestApp* CreateApp();
 }

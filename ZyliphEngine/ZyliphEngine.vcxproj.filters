@@ -16,6 +16,9 @@
     <Filter Include="src\Core">
       <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Events">
+      <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\HeaderFiles">
       <UniqueIdentifier>{D86034F8-44EC-A1BC-4DFD-24B1B907FEBC}</UniqueIdentifier>
     </Filter>
@@ -40,13 +43,40 @@
     <Filter Include="src\Utils">
       <UniqueIdentifier>{4D9AFFB3-B904-B42A-0243-65D06EEC917F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Windowing">
+      <UniqueIdentifier>{324C07B4-9E0C-83EA-6747-CC67D3C6C7C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Windowing\Platform">
+      <UniqueIdentifier>{C660BBB4-B25A-E406-9BC7-7A1787604A73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Windowing\Platform\Windows">
+      <UniqueIdentifier>{00716888-EC96-32EF-D5DC-B7BAC1A157BB}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Common.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Assert.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\Core.h">
       <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\PlatformDetection.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\AppEvent.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\Event.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\KeyEvent.h">
+      <Filter>src\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\MouseEvent.h">
+      <Filter>src\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\HeaderFiles\Camera.h">
       <Filter>src\HeaderFiles</Filter>
@@ -83,6 +113,12 @@
     </ClInclude>
     <ClInclude Include="src\Utils\ZLogger.h">
       <Filter>src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h">
+      <Filter>src\Windowing\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Windowing\Window.h">
+      <Filter>src\Windowing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +178,9 @@
     </ClCompile>
     <ClCompile Include="src\Utils\ZLogger.cpp">
       <Filter>src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp">
+      <Filter>src\Windowing\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>

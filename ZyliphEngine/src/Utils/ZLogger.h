@@ -1,6 +1,7 @@
 #pragma once
 
 #include <spdlog/spdlog.h>
+#include <spdlog/fmt/ostr.h>
 #include "../Core/Core.h"
 
 
@@ -11,8 +12,8 @@ namespace Zyliph
     public:
         static void Init();
 
-        inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return z_CoreLogger; }
-        inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return z_ClientLogger; }
+        static std::shared_ptr<spdlog::logger> GetCoreLogger() { return z_CoreLogger; }
+        static std::shared_ptr<spdlog::logger> GetClientLogger() { return z_ClientLogger; }
     private:
         static  std::shared_ptr<spdlog::logger> z_CoreLogger;
         static std::shared_ptr<spdlog::logger> z_ClientLogger;

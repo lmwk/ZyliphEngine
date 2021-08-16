@@ -1,12 +1,15 @@
 #include "Test.h"
-#include "../Utils/ZLogger.h"
+
 #include <iostream>
+
 
 namespace Zyliph
 {
    TestApp::TestApp()
    {
-       
+       ZLogger::Init();
+       z_Window = Window::Create();
+       z_Window->SetEventCallback(Z_BIND_EVENT_FN(OnEvent));
    }
 
     TestApp::~TestApp()
@@ -14,14 +17,17 @@ namespace Zyliph
         
     }
 
-    void TestApp::Run()
+    void TestApp::OnEvent(Event& e)
     {
-        Zyliph::ZLogger::Init();
-        Z_CORE_CRITICAL("hi");
-        Z_CLIENT_TRACE("hi");
+        Z_CORE_INFO("{0}", e);
     }
 
 
-
-
+    void TestApp::Run()
+    {
+        while (z_Running)
+        {
+            z_Window->OnUpdate();
+        }
+    }
 }
