@@ -1,7 +1,4 @@
 #include "WinWindows.h"
-#include "../../../Events/AppEvent.h"
-#include "../../../Events/MouseEvent.h"
-#include "../../../Events/KeyEvent.h"
 
 namespace Zyliph
 {
@@ -100,6 +97,14 @@ namespace Zyliph
                 }
 
             });
+
+        glfwSetCharCallback(z_Window, [](GLFWwindow* window, unsigned int character)
+        {
+                WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(window));
+
+                KeyTypedEvent event(character);
+                data.EventCallback(event);
+        });
 
         glfwSetMouseButtonCallback(z_Window, [](GLFWwindow* window, int button, int action, int mods)
             {

@@ -30,11 +30,11 @@ project "ZyliphEngine"
         "%{prj.name}/src/Resources/TestTextures/**.png",
         "%{prj.name}/src/Resources/TestTextures/**.jpg",
         "Libraries/include/imgui/imgui_impl_glfw.cpp",
-        "Libraries/include/imgui/imgui_impl_opengl3.cpp",
         "Libraries/include/imgui/imgui_draw.cpp",
         "Libraries/include/imgui/imgui.cpp",
         "Libraries/include/imgui/imgui_tables.cpp",
         "Libraries/include/imgui/imgui_widgets.cpp",
+        "Libraries/include/imgui/imgui_demo.cpp"
     }
 
     includedirs 
@@ -55,7 +55,7 @@ project "ZyliphEngine"
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "off"
+        staticruntime "On"
         systemversion "latest"
 
         defines 
@@ -71,14 +71,17 @@ project "ZyliphEngine"
 
     filter "configurations:Debug"
         defines "Z_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
     
     filter "configurations:Release"
         defines "Z_RELEASE"
+        buildoptions "/MD"
         optimize "On"
     
     filter "configurations:Dist"
         defines "Z_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "ZyliphTestApp"
@@ -119,12 +122,15 @@ project "ZyliphTestApp"
 
     filter "configurations:Debug"
         defines "Z_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
     
     filter "configurations:Release"
         defines "Z_RELEASE"
+        buildoptions "/MD"
         optimize "On"
     
     filter "configurations:Dist"
         defines "Z_DIST"
+        buildoptions "/MD"
         optimize "On"

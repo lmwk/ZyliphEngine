@@ -22,6 +22,12 @@
     <Filter Include="src\HeaderFiles">
       <UniqueIdentifier>{D86034F8-44EC-A1BC-4DFD-24B1B907FEBC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ImGui">
+      <UniqueIdentifier>{170E22B3-8378-D629-CCB6-87CF3860B47E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Layers">
+      <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Resources">
       <UniqueIdentifier>{D76C8757-432D-038E-0C68-4C0B78E7476A}</UniqueIdentifier>
     </Filter>
@@ -45,6 +51,9 @@
     </Filter>
     <Filter Include="src\Windowing">
       <UniqueIdentifier>{324C07B4-9E0C-83EA-6747-CC67D3C6C7C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Windowing\OpenGL">
+      <UniqueIdentifier>{26099298-1298-1B62-BBB6-2F5DA7242C08}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Windowing\Platform">
       <UniqueIdentifier>{C660BBB4-B25A-E406-9BC7-7A1787604A73}</UniqueIdentifier>
@@ -108,11 +117,23 @@
     <ClInclude Include="src\HeaderFiles\shaderClass.h">
       <Filter>src\HeaderFiles</Filter>
     </ClInclude>
+    <ClInclude Include="src\ImGui\GUILayer.h">
+      <Filter>src\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\Layer.h">
+      <Filter>src\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\LayerStack.h">
+      <Filter>src\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Testing\Test.h">
       <Filter>src\Testing</Filter>
     </ClInclude>
     <ClInclude Include="src\Utils\ZLogger.h">
       <Filter>src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>src\Windowing\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h">
       <Filter>src\Windowing\Platform\Windows</Filter>
@@ -120,9 +141,15 @@
     <ClInclude Include="src\Windowing\Window.h">
       <Filter>src\Windowing</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utils\Input.h" />
+    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Utils\KeyCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\include\imgui\imgui.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_demo.cpp">
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\Libraries\include\imgui\imgui_draw.cpp">
@@ -131,14 +158,20 @@
     <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp">
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp">
-      <Filter>Libraries\include\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp">
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\Libraries\include\imgui\imgui_widgets.cpp">
       <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImGui\GUILayer.cpp">
+      <Filter>src\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layers\Layer.cpp">
+      <Filter>src\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layers\LayerStack.cpp">
+      <Filter>src\Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\SourceFiles\Camera.cpp">
       <Filter>src\SourceFiles</Filter>
@@ -179,12 +212,16 @@
     <ClCompile Include="src\Utils\ZLogger.cpp">
       <Filter>src\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>src\Windowing\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Resources\shaders\default.geom">

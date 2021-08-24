@@ -35,8 +35,9 @@ virtual const char* GetName() const override {return #type;}
 
     class Z_API Event
     {
-        friend class EventDispatcher;
     public:
+        bool handled = false;
+
         virtual EventType GetEventType() const = 0;
         virtual const char* GetName() const = 0;
         virtual int GetCategoryFlags() const = 0;
@@ -46,8 +47,6 @@ virtual const char* GetName() const override {return #type;}
         {
             return GetCategoryFlags() & category;
         }
-    protected:
-        bool z_Handled = false;
     };
 
     class EventDispatcher
@@ -65,7 +64,7 @@ virtual const char* GetName() const override {return #type;}
         {
             if (z_Event.GetEventType() == T::GetStaticType())
             {
-                z_Event.z_Handled = func(static_cast<T*>(&z_Event));
+                z_Event.handled = func(*static_cast<T*>(&z_Event));
                 return true;
             }
             return false;
@@ -81,3 +80,4 @@ virtual const char* GetName() const override {return #type;}
     }
 
 }
+ 

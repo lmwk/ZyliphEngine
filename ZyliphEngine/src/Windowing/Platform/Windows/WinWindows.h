@@ -21,6 +21,8 @@ namespace Zyliph
         inline void SetEventCallback(const EventCallbackFn& callback) override { z_Data.EventCallback = callback; }
         void SetVSync(bool enabled) override;
         bool IsVSync() const override;
+
+        inline virtual void* GetNativeWindow() const { return z_Window; };
     private:
         virtual void Init(const WindowVals& vals);
         virtual void Shutdown();

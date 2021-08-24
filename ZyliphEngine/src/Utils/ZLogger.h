@@ -7,7 +7,7 @@
 
 namespace Zyliph
 {
-    class ZLogger
+    class Z_API ZLogger
     {
     public:
         static void Init();

@@ -2,6 +2,9 @@
 
 #include "../Core/Assert.h"
 #include "../Events/Event.h"
+#include "../Events/AppEvent.h"
+#include "../Events/MouseEvent.h"
+#include "../Events/KeyEvent.h"
 
 namespace Zyliph
 {
@@ -32,6 +35,8 @@ namespace Zyliph
         virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
         virtual void SetVSync(bool enabled) = 0;
         virtual bool IsVSync() const = 0;
+
+        virtual void* GetNativeWindow() const = 0;
 
         static Scope<Window> Create(const WindowVals& vals = WindowVals());
     };

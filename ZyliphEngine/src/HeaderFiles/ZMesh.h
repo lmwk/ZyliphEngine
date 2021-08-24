@@ -1,6 +1,7 @@
 ﻿#ifndef ZMESH_CLASS_H
 #define ZMESH_CLASS_H
 
+
 #include <string>
 
 #include "VAO.h"

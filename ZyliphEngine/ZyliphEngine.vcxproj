@@ -82,7 +82,8 @@
       <AdditionalIncludeDirectories>..\Libraries\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -107,7 +108,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -133,7 +135,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -167,18 +170,28 @@
     <ClInclude Include="src\HeaderFiles\ZMesh.h" />
     <ClInclude Include="src\HeaderFiles\ZModel.h" />
     <ClInclude Include="src\HeaderFiles\shaderClass.h" />
+    <ClInclude Include="src\ImGui\GUILayer.h" />
+    <ClInclude Include="src\Layers\Layer.h" />
+    <ClInclude Include="src\Layers\LayerStack.h" />
+    <ClInclude Include="src\Utils\Input.h" />
     <ClInclude Include="src\Testing\Test.h" />
+    <ClInclude Include="src\Utils\KeyCodes.h" />
     <ClInclude Include="src\Utils\ZLogger.h" />
+    <ClInclude Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h" />
     <ClInclude Include="src\Windowing\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\include\imgui\imgui.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\ImGui\GUILayer.cpp" />
+    <ClCompile Include="src\Layers\Layer.cpp" />
+    <ClCompile Include="src\Layers\LayerStack.cpp" />
     <ClCompile Include="src\SourceFiles\Camera.cpp" />
     <ClCompile Include="src\SourceFiles\EBO.cpp" />
     <ClCompile Include="src\SourceFiles\Texture.cpp" />
@@ -192,6 +205,8 @@
     <ClCompile Include="src\SourceFiles\stb.cpp" />
     <ClCompile Include="src\Testing\Test.cpp" />
     <ClCompile Include="src\Utils\ZLogger.cpp" />
+    <ClCompile Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
