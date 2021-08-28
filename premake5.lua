@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "ZyliphEngine"
     location "ZyliphEngine"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
+    cppdialect "C++17"
+    staticruntime "On"
 
     targetdir ("bin/" .. outputdir .."/%{prj.name}")
     objdir ("bin/int/" .. outputdir .."/%{prj.name}")
@@ -30,6 +32,7 @@ project "ZyliphEngine"
         "%{prj.name}/src/Resources/TestTextures/**.png",
         "%{prj.name}/src/Resources/TestTextures/**.jpg",
         "Libraries/include/imgui/imgui_impl_glfw.cpp",
+        "Libraries/include/imgui/imgui_impl_opengl3.cpp",
         "Libraries/include/imgui/imgui_draw.cpp",
         "Libraries/include/imgui/imgui.cpp",
         "Libraries/include/imgui/imgui_tables.cpp",
@@ -54,8 +57,6 @@ project "ZyliphEngine"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines 
@@ -64,24 +65,22 @@ project "ZyliphEngine"
             "Z_BUILD_DLL"
         }
 
-        postbuildcommands 
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/ZyliphTestApp)")
-        }
-
     filter "configurations:Debug"
         defines "Z_DEBUG"
         buildoptions "/MDd"
+        runtime "Debug"
         symbols "On"
     
     filter "configurations:Release"
         defines "Z_RELEASE"
         buildoptions "/MD"
+        runtime "Release"
         optimize "On"
     
     filter "configurations:Dist"
         defines "Z_DIST"
         buildoptions "/MD"
+        runtime "Release"
         optimize "On"
 
 project "ZyliphTestApp"

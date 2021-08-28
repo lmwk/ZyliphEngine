@@ -6,7 +6,7 @@
 
 namespace Zyliph
 {
-    class Z_API WindowResizeEvent : public Event 
+    class  WindowResizeEvent : public Event 
     {
     public:
         WindowResizeEvent(unsigned int width, unsigned int height) : z_Width(width), z_Height(height) {}
@@ -27,7 +27,7 @@ namespace Zyliph
         unsigned int z_Width, z_Height;
     };
 
-    class Z_API WindowCloseEvent : public Event
+    class  WindowCloseEvent : public Event
     {
     public:
         WindowCloseEvent() = default;
@@ -36,7 +36,7 @@ namespace Zyliph
         EVENT_CLASS_CATEGORY(EventCategoryApp)
     };
 
-    class Z_API AppTickEvent : public Event
+    class  AppTickEvent : public Event
     {
     public:
         AppTickEvent() = default;
@@ -45,7 +45,7 @@ namespace Zyliph
         EVENT_CLASS_CATEGORY(EventCategoryApp)
     };
 
-    class Z_API AppUpdateEvent : public Event
+    class  AppUpdateEvent : public Event
     {
     public:
         AppUpdateEvent() = default;
@@ -54,7 +54,7 @@ namespace Zyliph
         EVENT_CLASS_CATEGORY(EventCategoryApp)
     };
 
-    class Z_API AppRenderEvent : public Event
+    class  AppRenderEvent : public Event
     {
     public:
         AppRenderEvent() = default;

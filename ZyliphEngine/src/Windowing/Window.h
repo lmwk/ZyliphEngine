@@ -20,7 +20,7 @@ namespace Zyliph
         : Title(title), width(Width), height(Height) {}
     };
 
-    class Z_API Window
+    class  Window
     {
     public:
         using EventCallbackFn = std::function<void(Event&)>;

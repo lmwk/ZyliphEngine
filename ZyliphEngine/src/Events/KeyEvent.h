@@ -6,7 +6,7 @@
 
 namespace Zyliph
 {
-    class Z_API KeyEvent : public Event
+    class  KeyEvent : public Event
     {
     public:
         inline int GetKeyCode() const { return z_KeyCode; }
@@ -18,7 +18,7 @@ namespace Zyliph
         int z_KeyCode;
     };
 
-    class Z_API KeyPressedEvent : public KeyEvent
+    class  KeyPressedEvent : public KeyEvent
     {
     public:
         KeyPressedEvent(int keycode, int repeatCount) : KeyEvent(keycode), z_RepeatCount(repeatCount) {}
@@ -37,7 +37,7 @@ namespace Zyliph
         int z_RepeatCount;
     };
 
-    class Z_API KeyTypedEvent : public KeyEvent
+    class  KeyTypedEvent : public KeyEvent
     {
     public:
         KeyTypedEvent(int keycode) : KeyEvent(keycode) {}
@@ -52,7 +52,7 @@ namespace Zyliph
         EVENT_CLASS_TYPE(KeyTyped)
     };
 
-    class Z_API KeyReleasedEvent : public KeyEvent
+    class  KeyReleasedEvent : public KeyEvent
     {
     public:
         KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}

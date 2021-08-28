@@ -2,6 +2,8 @@
 
 #include "../../Window.h"
 
+#include "../../../Rendering/GraphicsContext.h"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -28,6 +30,7 @@ namespace Zyliph
         virtual void Shutdown();
     private:
         GLFWwindow* z_Window;
+        GraphicsContext* z_RenderCtx;
 
         struct WindowData
         {

@@ -7,7 +7,7 @@
 
 namespace Zyliph
 {
-    class Z_API LayerStack
+    class  LayerStack
     {
     public:
         LayerStack();
@@ -22,6 +22,6 @@ namespace Zyliph
         std::vector<Layer*>::iterator end() { return z_Layers.end(); };
     private:
         std::vector<Layer*> z_Layers;
-        std::vector<Layer*>::iterator z_LayerInsert;
+        unsigned int z_LayerInsertIndex = 0;
     };
 }

@@ -43,4 +43,18 @@ namespace Zyliph
 
         return glm::vec2(xpos, ypos);
     }
+
+    void WindowsInput::SetMousePosImpl(double xpos, double ypos)
+    {
+        auto window = static_cast<GLFWwindow*>(TestApp::Get().GetWindow().GetNativeWindow());
+        glfwSetCursorPos(window, xpos, ypos);
+    }
+
+    void WindowsInput::SetInputModeImpl(int inputmode, int visibility)
+    {
+        auto window = static_cast<GLFWwindow*>(TestApp::Get().GetWindow().GetNativeWindow());
+        glfwSetInputMode(window,inputmode, visibility);
+    }
+
+
 }

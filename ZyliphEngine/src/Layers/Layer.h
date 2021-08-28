@@ -6,7 +6,7 @@
 
 namespace Zyliph
 {
-    class Z_API Layer
+    class  Layer
     {
     public:
         Layer(const std::string& name = "Layer");
@@ -15,6 +15,7 @@ namespace Zyliph
         virtual void OnAttach() {}
         virtual void OnDetach() {}
         virtual void OnUpdate() {}
+        virtual void OnImGuiRender() {}
         virtual void OnEvent(Event& event) {}
 
         inline const std::string& GetName() const { return z_DebugName; }

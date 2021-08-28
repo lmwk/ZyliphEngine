@@ -7,7 +7,7 @@
 namespace Zyliph
 {
 
-    class Z_API MouseMovedEvent : public Event
+    class  MouseMovedEvent : public Event
     {
     public:
         MouseMovedEvent(float x, float y) : z_MouseX(x), z_MouseY(y) {}
@@ -28,7 +28,7 @@ namespace Zyliph
         float z_MouseX, z_MouseY;
     };
 
-    class Z_API MouseScrolledEvent : public Event
+    class  MouseScrolledEvent : public Event
     {
     public:
         MouseScrolledEvent(float xOffset, float yOffset) : z_xOffset(xOffset), z_yOffset(yOffset) {}
@@ -49,7 +49,7 @@ namespace Zyliph
         float z_xOffset, z_yOffset;
     };
 
-    class Z_API MouseButtonEvent : public Event
+    class  MouseButtonEvent : public Event
     {
     public:
         inline int GetMouseButton() const { return z_Button; }
@@ -60,7 +60,7 @@ namespace Zyliph
         int z_Button;
     };
 
-    class Z_API MouseButtonPressedEvent : public MouseButtonEvent
+    class  MouseButtonPressedEvent : public MouseButtonEvent
     {
     public:
         MouseButtonPressedEvent(int button) : MouseButtonEvent(button) {}
@@ -75,7 +75,7 @@ namespace Zyliph
         EVENT_CLASS_TYPE(MouseButtonPressed)
     };
 
-    class Z_API MouseButtonReleasedEvent : public MouseButtonEvent
+    class  MouseButtonReleasedEvent : public MouseButtonEvent
     {
     public:
         MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}

@@ -298,8 +298,8 @@ namespace Zyliph
                 counter = 0;
 
                 camera.joystick1Present = glfwJoystickPresent(GLFW_JOYSTICK_1);
-                camera.KeyInputs(window, deltatime);
-                camera.GamePadInputs(window, deltatime);
+                camera.KeyInputs(deltatime);
+                camera.GamePadInputs(deltatime);
                 camera.UpdateMatrix(45.0f, 0.1f, 100.0f);
 
             }

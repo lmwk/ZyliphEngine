@@ -18,16 +18,6 @@
     #define Z_DEBUGBREAK()
 #endif
 
-#ifdef Z_PLATFORM_WINDOWS
-    #ifdef Z_BUILD_DLL
-        #define Z_API __declspec(dllexport)
-    #else
-        #define Z_API __declspec(dllimport)
-    #endif
-#else
-    #error Zyliph Engine doesn't support this platform yet
-#endif
-
 #define Z_EXPAND_MACRO(x) x
 #define Z_STRINGIFY_MACRO(x) #x
 

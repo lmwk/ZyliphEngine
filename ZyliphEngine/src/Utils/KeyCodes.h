@@ -123,6 +123,7 @@
 #define RIGHT_SUPER        347
 #define MENU               348
 
+//Mouse Buttons
 #define MOUSE_1         0
 #define MOUSE_2         1
 #define MOUSE_3         2
@@ -136,6 +137,7 @@
 #define MOUSE_RIGHT     MOUSE_2
 #define MOUSE_MIDDLE    MOUSE_3
 
+//Joysticks
 #define JOY_1             0
 #define JOY_2             1
 #define JOY_3             2
@@ -153,6 +155,8 @@
 #define JOY_15            14
 #define JOY_16            15
 #define JOY_LAST          JOY_16
+
+//Joystick inputs
 
 #define GAMEPAD_BTN_A               0
 #define GAMEPAD_BTN_B               1
@@ -183,3 +187,15 @@
 #define GAMEPAD_AXS_LEFT_TRIGGER  4
 #define GAMEPAD_AXS_RIGHT_TRIGGER 5
 #define GAMEPAD_AXS_LAST          GAMEPAD_AXS_RIGHT_TRIGGER
+
+//Input modes and visibility
+
+#define CURSOR                 0x00033001
+#define STICKY_KEYS            0x00033002
+#define STICKY_MOUSE_BUTTONS   0x00033003
+#define LOCK_KEY_MODS          0x00033004
+#define RAW_MOUSE_MOTION       0x00033005
+
+#define CURSOR_NORMAL          0x00034001
+#define CURSOR_HIDDEN          0x00034002
+#define CURSOR_DISABLED        0x00034003

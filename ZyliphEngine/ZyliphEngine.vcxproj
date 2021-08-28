@@ -23,19 +23,19 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -54,25 +54,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug-windows-x86_64\ZyliphEngine\</OutDir>
     <IntDir>..\bin\int\Debug-windows-x86_64\ZyliphEngine\</IntDir>
     <TargetName>ZyliphEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release-windows-x86_64\ZyliphEngine\</OutDir>
     <IntDir>..\bin\int\Release-windows-x86_64\ZyliphEngine\</IntDir>
     <TargetName>ZyliphEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Dist-windows-x86_64\ZyliphEngine\</OutDir>
     <IntDir>..\bin\int\Dist-windows-x86_64\ZyliphEngine\</IntDir>
     <TargetName>ZyliphEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -89,13 +86,11 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
-    </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Debug-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Debug-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
-    </PostBuildEvent>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -116,13 +111,11 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ImportLibrary>..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
-    </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Release-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Release-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
-    </PostBuildEvent>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
@@ -143,13 +136,11 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Libraries\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ImportLibrary>..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.lib</ImportLibrary>
-    </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Dist-windows-x86_64\ZyliphTestApp) &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\ZyliphEngine\ZyliphEngine.dll ..\bin\Dist-windows-x86_64\ZyliphTestApp) &gt; nul)</Command>
-    </PostBuildEvent>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Common.h" />
@@ -173,13 +164,14 @@
     <ClInclude Include="src\ImGui\GUILayer.h" />
     <ClInclude Include="src\Layers\Layer.h" />
     <ClInclude Include="src\Layers\LayerStack.h" />
-    <ClInclude Include="src\Utils\Input.h" />
+    <ClInclude Include="src\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Testing\Test.h" />
+    <ClInclude Include="src\Utils\Input.h" />
     <ClInclude Include="src\Utils\KeyCodes.h" />
     <ClInclude Include="src\Utils\ZLogger.h" />
-    <ClInclude Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Windowing\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h" />
+    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Windowing\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -187,9 +179,11 @@
     <ClCompile Include="..\Libraries\include\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Libraries\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\ImGui\GUILayer.cpp" />
+    <ClCompile Include="src\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Layers\Layer.cpp" />
     <ClCompile Include="src\Layers\LayerStack.cpp" />
     <ClCompile Include="src\SourceFiles\Camera.cpp" />
@@ -205,9 +199,9 @@
     <ClCompile Include="src\SourceFiles\stb.cpp" />
     <ClCompile Include="src\Testing\Test.cpp" />
     <ClCompile Include="src\Utils\ZLogger.cpp" />
-    <ClCompile Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Windowing\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp" />
+    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

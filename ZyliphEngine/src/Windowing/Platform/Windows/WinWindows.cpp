@@ -1,5 +1,7 @@
 #include "WinWindows.h"
 
+#include "../../OpenGL/OpenGLContext.h"
+
 namespace Zyliph
 {
     static bool IsGlfwInit = false;
@@ -48,6 +50,10 @@ namespace Zyliph
 
         z_Window = glfwCreateWindow(static_cast<int>(vals.width), static_cast<int>(vals.height), z_Data.title.c_str(),
                                     nullptr, nullptr);
+        z_RenderCtx = new OpenGLContext(z_Window);
+
+        z_RenderCtx->Init();
+
         glfwMakeContextCurrent(z_Window);
         glfwSetWindowUserPointer(z_Window, &z_Data);
         SetVSync(true);
@@ -154,7 +160,7 @@ namespace Zyliph
     void WinWindow::OnUpdate()
     {
         glfwPollEvents();
-        glfwSwapBuffers(z_Window);
+        z_RenderCtx->SwapBuffers();
     }
 
     void WinWindow::SetVSync(bool enabled)

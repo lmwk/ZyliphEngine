@@ -10,36 +10,40 @@
 #include <glm/gtx/vector_angle.hpp>
 
 #include "shaderClass.h"
+#include "../Utils/Input.h"
 
-class Camera
+namespace Zyliph
 {
-public:
-    glm::vec3 Position;
-    glm::vec3 Orientation = glm::vec3(0.0f, 0.0f, -1.0f);
-    glm::vec3 Up = glm::vec3(0.0f, 1.0f, 0.0f);
-    glm::mat4 cameraMatrix = glm::mat4(1.0f);
+    class Camera
+    {
+    public:
+        glm::vec3 Position;
+        glm::vec3 Orientation = glm::vec3(0.0f, 0.0f, -1.0f);
+        glm::vec3 Up = glm::vec3(0.0f, 1.0f, 0.0f);
+        glm::mat4 cameraMatrix = glm::mat4(1.0f);
 
-    int width;
-    int height;
+        int width;
+        int height;
 
-    int axesCount;
-    int buttonCount;
-    int joystick1Present;
+        int axesCount;
+        int buttonCount;
+        int joystick1Present;
 
-    bool firstclick = true;
+        bool firstclick = true;
 
-    float speed = 0.1f;
-    float sensitivity = 100.0f;
+        float speed = 0.1f;
+        float sensitivity = 100.0f;
 
 
-    Camera(int width, int height, glm::vec3 position);
-    Camera() = default;
-    Camera(const Camera&) = default;
+        Camera(int width, int height, glm::vec3 position);
+        Camera() = default;
+        Camera(const Camera&) = default;
 
-    void UpdateMatrix(float FOVdeg, float nearPlane, float farPlane);
-    void Matrix(Shader& shader, const char* uniform);
-    void KeyInputs(GLFWwindow* window, double deltatime);
-    void GamePadInputs(GLFWwindow* window, double deltatime);
-};
+        void UpdateMatrix(float FOVdeg, float nearPlane, float farPlane);
+        void Matrix(Shader& shader, const char* uniform);
+        void KeyInputs(double deltatime);
+        void GamePadInputs(double deltatime);
+    };
+}
 
 #endif

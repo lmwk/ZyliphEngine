@@ -1,5 +1,7 @@
 ﻿#include "../HeaderFiles/shaderClass.h"
 
+#include "../Utils/ZLogger.h"
+
 //gets shader code in file
 std::string get_file_contents(const char* filename)
 {
@@ -107,7 +109,7 @@ void Shader::compileErrors(unsigned shader, const char* type)
         if (hasCompiled == GL_FALSE)
         {
 			glGetShaderInfoLog(shader, 1024, NULL, infolog);
-			std::cout << "SHADER_COMPILATION_ERROR for:" << type << "\n" << infolog << std::endl;
+			Z_CORE_CRITICAL("SHADER_COMPILATION_ERROR for: {0} \n {1}", type, infolog);
         }
     }
 	else
@@ -116,7 +118,7 @@ void Shader::compileErrors(unsigned shader, const char* type)
 		if (hasCompiled == GL_FALSE)
 		{
 			glGetProgramInfoLog(shader, 1024, NULL, infolog);
-			std::cout << "SHADER_LINKING_ERROR for:" << type << "\n" << infolog << std::endl;
+			Z_CORE_CRITICAL("SHADER_LINKING_ERROR for: {0} \n {1}", type, infolog);
 		}
 	}
 }

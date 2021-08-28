@@ -52,9 +52,6 @@
     <Filter Include="src\Windowing">
       <UniqueIdentifier>{324C07B4-9E0C-83EA-6747-CC67D3C6C7C6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Windowing\OpenGL">
-      <UniqueIdentifier>{26099298-1298-1B62-BBB6-2F5DA7242C08}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Windowing\Platform">
       <UniqueIdentifier>{C660BBB4-B25A-E406-9BC7-7A1787604A73}</UniqueIdentifier>
     </Filter>
@@ -129,21 +126,26 @@
     <ClInclude Include="src\Testing\Test.h">
       <Filter>src\Testing</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utils\Input.h">
+      <Filter>src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils\KeyCodes.h">
+      <Filter>src\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="src\Utils\ZLogger.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\Windowing\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h">
+      <Filter>src\Windowing\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Windowing\Window.h">
       <Filter>src\Windowing</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Input.h" />
-    <ClInclude Include="src\Windowing\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Utils\KeyCodes.h" />
+    <ClInclude Include="src\Rendering\GraphicsContext.h" />
+    <ClInclude Include="src\Windowing\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\include\imgui\imgui.cpp">
@@ -158,6 +160,9 @@
     <ClCompile Include="..\Libraries\include\imgui\imgui_impl_glfw.cpp">
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="..\Libraries\include\imgui\imgui_impl_opengl3.cpp">
+      <Filter>Libraries\include\imgui</Filter>
+    </ClCompile>
     <ClCompile Include="..\Libraries\include\imgui\imgui_tables.cpp">
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
@@ -165,6 +170,9 @@
       <Filter>Libraries\include\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\ImGui\GUILayer.cpp">
+      <Filter>src\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
       <Filter>src\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Layers\Layer.cpp">
@@ -212,16 +220,16 @@
     <ClCompile Include="src\Utils\ZLogger.cpp">
       <Filter>src\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="src\Windowing\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\Windowing\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp">
+      <Filter>src\Windowing\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Windowing\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Resources\shaders\default.geom">

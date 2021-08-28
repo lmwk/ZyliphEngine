@@ -17,7 +17,7 @@ public:
 
     void OnEvent(Zyliph::Event& event) override
     {
-        Z_CLIENT_TRACE("{0}", event);
+        
     }
 };
 
@@ -27,7 +27,6 @@ public:
     App()
     {
         PushLayer(new ExampleLayer());
-        PushOverlay(new Zyliph::GUILayer());
     }
 
     ~App()

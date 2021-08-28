@@ -15,5 +15,7 @@ namespace Zyliph
         float GetMouseXImpl() override;
         float GetMouseYImpl() override;
         glm::vec2 GetMousePosImpl() override;
+        void SetMousePosImpl(double xpos, double ypos) override;
+        void SetInputModeImpl(int inputmode, int visibility) override;
     };
 }

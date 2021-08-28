@@ -4,7 +4,6 @@ namespace Zyliph
 {
     LayerStack::LayerStack()
     {
-        z_LayerInsert = z_Layers.begin();
     }
 
     LayerStack::~LayerStack()
@@ -15,7 +14,8 @@ namespace Zyliph
 
     void LayerStack::PushLayer(Layer* layer)
     {
-        z_LayerInsert = z_Layers.emplace(z_LayerInsert, layer);
+        z_Layers.emplace(z_Layers.begin() + z_LayerInsertIndex, layer);
+        z_LayerInsertIndex++;
     }
 
     void LayerStack::PushOverlay(Layer* overlay)
@@ -29,7 +29,7 @@ namespace Zyliph
         if (it != z_Layers.end())
         {
             z_Layers.erase(it);
-            z_LayerInsert--;
+            z_LayerInsertIndex--;
         }
     }
 
