@@ -1,7 +1,7 @@
 #include "WindowsInput.h"
 
 #include "../../../Testing/Test.h"
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 namespace Zyliph
 {

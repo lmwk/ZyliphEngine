@@ -1,4 +1,5 @@
 #include "Test.h"
+#include "../Rendering/RenderCommand.h"
 
 namespace Zyliph
 {
@@ -77,6 +78,10 @@ namespace Zyliph
 
         ZModel model("../ZyliphEngine/src/Resources/models/sword/scene.gltf", 1);
 
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_FRONT);
+        glFrontFace(GL_CCW);
+
         while (z_Running)
         {
 
@@ -100,8 +105,8 @@ namespace Zyliph
 
             }
             //Swappy wappy my bwuffews pwease -gawwy
-            glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            RenderCommand::SetClearColor(glm::vec4(0.07f, 0.13f, 0.17f, 1.0f));
+            RenderCommand::Clear();
             glEnable(GL_DEPTH_TEST);
 
             model.Draw(shaderProgram, camera);
@@ -111,8 +116,6 @@ namespace Zyliph
             glm::mat4 projection = glm::mat4(1.0f);
             view = glm::mat4(glm::mat3(glm::lookAt(camera.Position, camera.Position + camera.Orientation, camera.Up)));
             projection = glm::perspective(glm::radians(45.0f), (float)z_Window->GetWidth() / z_Window->GetHeight(), 0.1f, 100.0f);
-
-            glEnable(GL_CULL_FACE);
 
             for (Layer* layer : z_LayerStack)
                 layer->OnUpdate();

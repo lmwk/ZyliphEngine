@@ -1,5 +1,7 @@
 ﻿#include "../HeaderFiles/shaderClass.h"
 
+#include <glm/gtc/type_ptr.hpp>
+
 #include "../Utils/ZLogger.h"
 
 //gets shader code in file
@@ -97,6 +99,11 @@ void Shader::Activate()
 void Shader::Delete()
 {
 	glDeleteProgram(ID);
+}
+
+void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
+{
+	glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 void Shader::compileErrors(unsigned shader, const char* type)

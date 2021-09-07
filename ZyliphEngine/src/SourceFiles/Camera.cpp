@@ -65,7 +65,7 @@ namespace Zyliph
         {
             speed = 7.8f;
         }
-        if (Input::IsMouseButtonPressed(MOUSE_LEFT))
+        if (Input::IsMouseButtonPressed(MOUSE_RIGHT))
         {
             Input::SetInputMode(CURSOR, CURSOR_HIDDEN);
 
@@ -94,7 +94,7 @@ namespace Zyliph
             Input::SetMousePos((width / 2), (height / 2));
 
         }
-        else if (Input::IsMouseButtonPressed(MOUSE_LEFT))
+        else if (Input::IsMouseButtonPressed(MOUSE_RIGHT) == false)
         {
             Input::SetInputMode(CURSOR, CURSOR_NORMAL);
             firstclick = true;
@@ -106,7 +106,7 @@ namespace Zyliph
     {
         if (joystick1Present == 1)
         {
-            Input::SetInputMode(CURSOR, CURSOR_NORMAL);
+            Input::SetInputMode(CURSOR, CURSOR_HIDDEN);
             const float* axes = glfwGetJoystickAxes(GLFW_JOYSTICK_1, &axesCount);
             const unsigned char* buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &buttonCount);
             Input::SetMousePos((width / 2), (height / 2));
@@ -119,8 +119,8 @@ namespace Zyliph
                 double mouseX = pos.x;
                 double mouseY = pos.y;
 
-                rotX = (static_cast<float>(mouseY) + sensitivity * axes[3] * static_cast<float>(deltatime / 10) - (height / 2)) / 2;
-                rotY = (static_cast<float>(mouseX) + sensitivity * axes[2] * static_cast<float>(deltatime / 10) - (width / 2)) / 2;
+                rotX = (static_cast<float>(mouseY) + sensitivity * axes[3] * static_cast<float>(deltatime / 7) - (height / 2)) / 2;
+                rotY = (static_cast<float>(mouseX) + sensitivity * axes[2] * static_cast<float>(deltatime / 7) - (width / 2)) / 2;
 
                 const glm::vec3 newOrientation = glm::rotate(Orientation, glm::radians(-rotX), glm::normalize(glm::cross(Orientation, Up)));
 

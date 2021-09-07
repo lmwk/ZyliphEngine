@@ -28,17 +28,8 @@
     <Filter Include="src\Layers">
       <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Resources">
-      <UniqueIdentifier>{D76C8757-432D-038E-0C68-4C0B78E7476A}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Resources\TestTextures">
-      <UniqueIdentifier>{4AB0DED3-36C0-8AA4-9F79-EFC28BA8793D}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Resources\TestTextures\skybox">
-      <UniqueIdentifier>{39E886D1-A556-DC50-EE3F-97505AEDD1EC}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Resources\shaders">
-      <UniqueIdentifier>{D010E230-3C7D-9D2B-0571-3589719CBF93}</UniqueIdentifier>
+    <Filter Include="src\Rendering">
+      <UniqueIdentifier>{BA10DABB-26D1-55F2-EF0B-9F6F5B8B9ACE}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\SourceFiles">
       <UniqueIdentifier>{A0C4A428-0C50-12ED-1561-95E1816B6EED}</UniqueIdentifier>
@@ -51,6 +42,9 @@
     </Filter>
     <Filter Include="src\Windowing">
       <UniqueIdentifier>{324C07B4-9E0C-83EA-6747-CC67D3C6C7C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Windowing\OpenGL">
+      <UniqueIdentifier>{26099298-1298-1B62-BBB6-2F5DA7242C08}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Windowing\Platform">
       <UniqueIdentifier>{C660BBB4-B25A-E406-9BC7-7A1787604A73}</UniqueIdentifier>
@@ -123,6 +117,9 @@
     <ClInclude Include="src\Layers\LayerStack.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rendering\GraphicsContext.h">
+      <Filter>src\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="src\Testing\Test.h">
       <Filter>src\Testing</Filter>
     </ClInclude>
@@ -135,6 +132,9 @@
     <ClInclude Include="src\Utils\ZLogger.h">
       <Filter>src\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="src\Windowing\OpenGL\OpenGLContext.h">
+      <Filter>src\Windowing\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Windowing\Platform\Windows\WinWindows.h">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClInclude>
@@ -144,8 +144,13 @@
     <ClInclude Include="src\Windowing\Window.h">
       <Filter>src\Windowing</Filter>
     </ClInclude>
-    <ClInclude Include="src\Rendering\GraphicsContext.h" />
-    <ClInclude Include="src\Windowing\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Buffers\Buffer.h" />
+    <ClInclude Include="src\Windowing\OpenGL\OpenGLBuffers.h" />
+    <ClInclude Include="src\Rendering\Renderer.h" />
+    <ClInclude Include="src\Rendering\RendererAPI.h" />
+    <ClInclude Include="src\Rendering\RenderCommand.h" />
+    <ClInclude Include="src\Windowing\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Cameras\OrthoCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\include\imgui\imgui.cpp">
@@ -220,94 +225,21 @@
     <ClCompile Include="src\Utils\ZLogger.cpp">
       <Filter>src\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="src\Windowing\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Windowing\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Windowing\Platform\Windows\WinWindows.cpp">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Windowing\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Windowing\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Windowing\OpenGL\OpenGLContext.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\Resources\shaders\default.geom">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\defualt.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\defualt.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\framebuffer.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\framebuffer.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\grass.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\instance.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\light.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\light.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\normals.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\normals.geom">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\outlining.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\outlining.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\skybox.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\skybox.vert">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-    <None Include="src\Resources\shaders\windows.frag">
-      <Filter>src\Resources\shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="src\Resources\TestTextures\ayanobaseihm512x512.jpg">
-      <Filter>src\Resources\TestTextures</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\planks.png">
-      <Filter>src\Resources\TestTextures</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\planksSpec.png">
-      <Filter>src\Resources\TestTextures</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\back.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\bottom.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\front.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\left.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\right.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
-    <Image Include="src\Resources\TestTextures\skybox\top.jpg">
-      <Filter>src\Resources\TestTextures\skybox</Filter>
-    </Image>
+    <ClCompile Include="src\Buffers\Buffer.cpp" />
+    <ClCompile Include="src\Windowing\OpenGL\OpenGLBuffers.cpp" />
+    <ClCompile Include="src\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Rendering\RendererAPI.cpp" />
+    <ClCompile Include="src\Rendering\RenderCommand.cpp" />
+    <ClCompile Include="src\Windowing\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Cameras\OrthoCamera.cpp" />
   </ItemGroup>
 </Project>

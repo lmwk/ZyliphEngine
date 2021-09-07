@@ -7,6 +7,7 @@
 #include <sstream>
 #include <iostream>
 #include <cerrno>
+#include <glm/glm.hpp>
 
 std::string get_file_contents(const char* filename);
 
@@ -21,6 +22,8 @@ public:
 
     void Activate();
     void Delete();
+
+    void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 private:
     void compileErrors(unsigned int shader, const char* type);
 };

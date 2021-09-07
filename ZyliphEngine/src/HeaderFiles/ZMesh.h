@@ -4,7 +4,7 @@
 
 #include <string>
 
-#include "VAO.h"
+#include "../Windowing/OpenGL/OpenGLBuffers.h"
 #include "EBO.h"
 #include "Camera.h"
 #include "Texture.h"
@@ -19,7 +19,8 @@ namespace Zyliph
         std::vector <Texture> textures;
 
 
-        VAO VAO;
+        VertexArrayBuffer* VAO;
+        Ref<IndexBuffer> EBO;
 
         unsigned int instances;
 
